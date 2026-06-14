@@ -6,9 +6,10 @@
     <title>Authentication Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css" />
+    
 </head>
 <body>
-        <section class="registration-section" aria-hidden="false">
+        <section class="registration-section display" >
             <form action="#">
                 <header class="primary-header-form">
                     <p class="heading">SCHOOL MANAGEMENT REGISTRATION</p>
@@ -19,21 +20,21 @@
                 </header>
                 <div class="logo-input">
                 <label for="school-logo-input">
-                    <input type="file" id="school-logo-input" style="display:none" />
+                    <input type="file" id="school-logo-input" style="display:none"/>
                     <i class="fa-solid fa-upload"></i>
                     <p>Add school Logo</p>
                 </label>
                        
-                <p aria-hidden="false">Logo uploaded successfully!  <i class="fa-solid fa-circle-check"></i></p>
+                <p  class="notify"aria-hidden="true">Logo uploaded successfully!  <i class="fa-solid fa-circle-check"></i></p>
                 </div>
                 <div class="schoolName-role">
                     <div class="school-name">
                         <p class="school-name-title">School Name</p>
-                        <input type="text" id="school-name-input" placeholder="schoolname" required />
+                        <input type="text" id="school-name-input" placeholder="schoolname" />
                     </div>
                     <div class="role">
                         <p class="role-title">Role</p>
-                        <select>
+                        <select id="role-select-input">
                             <option value="" selected disabled>Select role</option>
                             <option value="Admin">Admin</option>
                             <option value="Accountant">Accountant</option>
@@ -43,34 +44,34 @@
                 </div>
                 <div class="username">
                     <p class="username-title" >Username</p>
-                    <input type="text" placeholder="username" required />
+                    <input type="text" placeholder="username" id="username-input"  />
                 </div>
                 <div class="email">
                     <p class="email-title">Email</p>
-                    <input type="email" placeholder="example@gmail.com" required />
+                    <input type="email" placeholder="example@gmail.com" id="email-input"  />
                 </div>
                 <div class="passwd-confirm">
                     <div class="passwd">
                         <p class="passwd-title">Password</p>
-                        <input type="password" placeholder="password" required />
+                        <input type="password" placeholder="password" class="input-passwd"  id="password-input"  />
                     </div>
                     <div class="confirm">
                         <p class="confirm-title">Confirm Password</p>
-                        <input type="password" required />
+                        <input type="password" class="input-passwd" id="confirm-input"  />
                     </div>
                 </div>
                 <div class="showpasswd">
-                    <input type="checkbox"/>
+                    <input  type="checkbox" id="showpasswd1"/>
                     <span>Show password</span>
                 </div>
                 <button type="submit" class="register-btn">register</button>
                 <div class="shift">
-                    <p>Already have an account? <a href="#" id="shift-sec">login</a></p>
+                    <p>Already have an account? <a href="#" id="register-shift">login</a></p>
                 </div>
             </form>
         </section>
         
-        <section class="login-section" aria-hidden="true">
+        <section class="login-section" >
             <form action="#">
                 <header class="secondary-header-form">
                     <p class="heading"> school management Login</p>
@@ -81,21 +82,25 @@
                 </header>
                 <div class="username">
                     <p class="username-title">Username</p>
-                    <input type="text" required />
+                    <input type="text"  />
                 </div>
                 <div class="passwd passwd2">
                     <p class="passwd-title">Password</p>
-                    <input type="password" required />
+                    <input type="password" id="input-passwd2"  />
                 </div>
                   <div class="showpasswd">
-                    <input   type="checkbox" />
+                    <input   type="checkbox" id="showpasswd2" />
                     <span>Show password</span>
+                    
                 </div>
-                <button type="submit" class="register-btn">Login <i class="fa-solid fa-arrow-right-to-bracket"></i> </button>
+                <div class="error-display">  </div>
+
+                <button type="submit" class="register-btn" login-btn>Login <i class="fa-solid fa-arrow-right-to-bracket"></i> </button>
                 <div class="shift">
-                    <p>Don't have an account? <a href="#" id="shift-sec">register</a></p>
+                    <p>Don't have an account? <a href="#" id="login-shift">register</a></p>
                 </div>
             </form>
         </section>
+        <script src="./app.js"></script>
 </body>
 </html>

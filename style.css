@@ -44,7 +44,7 @@
  }
  
  
- section[aria-hidden="true"]{
+ .display{
    display:none;
    z-index:-1;
 
@@ -77,6 +77,8 @@
     border-radius:20px;
     font-family: var(--ff-primary);
     font-size: var(--fs-600);
+    opacity:1;
+    transition:.3s;
 
  }
  .registration-section form,
@@ -226,7 +228,7 @@
     height:4rem;
     display:flex;
     flex-direction:column;
-    gap:-5rem;
+    gap:.3rem;
     
  }
  .username input {
@@ -235,6 +237,7 @@
     background: none;
     outline: none;
     border: 1px solid var(--authentic-grey);
+    padding-inline: 1rem;
     
  }
  .username .username-title{
@@ -356,7 +359,7 @@ margin:10px 20px 0 20px;
         display:flex;
     }
  }
-.register-btn {
+ button.register-btn {
     margin:10px 20px 0 20px;
     width:calc(100% - 40px);
     height:2.5rem;
@@ -374,10 +377,11 @@ margin:10px 20px 0 20px;
 
     
  }
- button .register-btn:hover{
+ button.register-btn:hover{
     border:1px solid #84500b60;
     background: var(--full-time);
     color: var(--afghan-tan);
+
  }
 
  .shift {
@@ -387,7 +391,8 @@ margin:10px 20px 0 20px;
 
  }
 
- #shift-sec {
+ #login-shift,
+ #register-shift{
     text-decoration:none;
     text-transform: uppercase;
     color: var(--glossy-orange);
@@ -439,4 +444,11 @@ height:2.2rem;
    }
  }
 
+ .error-display {
+   margin: 10px 0 10px 20px;
+   font-size: 13px;
+   color:var(--glossy-orange);
+   font-weight: 600;
+
+ }
  
